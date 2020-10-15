@@ -61,7 +61,16 @@ ci <- c(beta1 + qnorm(0.025)*se.beta1, beta1 + qnorm(0.975)*se.beta1) # vemos qu
 # como LT-50 depende dos dois parametros desconhecidos, o seu valor estimado pode ser obtido, como:
 LT50 <- -(beta0/beta1) + mean(x) # 28.14
 
+#reproduzindo exemplo da pagina 7
+beta.zero <- c(1.52155, 1.49447, 3.10884)
+beta.um <- c(0.447795, 0.382833, 0.392359)
 
+# agrupando dois vetores
+ambeta <- cbind(beta.zero, beta.um)
+
+plot(density(ambeta[,2]), xlab = expression(beta[1]), ylab = expression(p(paste(beta[1], "|", dados))), main = "")
+
+hist(amostra, main = "")
 
 
 
